@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[J. Ramada]]></title><description><![CDATA[A Modern Day Magician's blog ]]></description><link>https://jramada.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 21 Apr 2021 15:17:35 GMT</lastBuildDate><item><title><![CDATA[6 Requirements your personal website must fulfill]]></title><description><![CDATA[The journey to build my own webpage]]></description><link>https://jramada.github.io/posts/the-journey-to-build-my-website</link><guid isPermaLink="false">https://jramada.github.io/posts/the-journey-to-build-my-website</guid><pubDate>Sat, 17 Apr 2021 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Creating a personal blog is something that I have been thinking about for some time.
+This is where my journey begins: on the requirements of having a personal website in modern times.&lt;/p&gt;
+&lt;p&gt;It can’t be easier to have a personal webpage these days. However, there can be some fallacies regarding content ownership, privacy, security and availability. My solution to this is simple, do a list of non-withdrawable requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Preserve Ownership of Content&lt;/strong&gt; - Thousands of people work hard every day to create content on “free” platforms which quietly take copyrights or get royalty free usage of the content. This is a matter I see very often discarded across the web. It is important to raise awareness to this problem and to always read the terms and conditions when dealing with “free” platforms.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt; - I don’t want any paid or subscription anchors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Simple Architecture&lt;/strong&gt; - A set of static webpages is more than enough. It is overkilling to pay for a backend server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fast Portability&lt;/strong&gt; - Disaster happens everywhere, every time, and in seconds. I want to focus on putting my thoughts  on (digital) paper, not spending hours migrating my page.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Minimalist&lt;/strong&gt; - This also reflects my way of thinking: the main focus should be on the reading material. I don’t need, or want, any fancy design or functionality. Any perceived need will occur naturally. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Separate Content&lt;/strong&gt; - My content should be as separate as possible from the technology. New requirements may arise and make my current website unviable. However, content must be easily ported.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My searching to fulfill these requirements led me to a interesting technology match. Gatsby is an opensource static site generator built on top of React and GraphQL. What sold me was the fast learning curve, great documentation and a dead simple blog website template which I used as backbone.
+The easy to use plugin functionalities made possible to create all my pages and blog posts in a separated content way by simply adding folders with markdown files.&lt;/p&gt;
+&lt;p&gt;Since I never worked with GraphQL I thought of a practical implementation of a “pinned posts” section to get the hang of it. The best way to accomplish this according to my view of “separated content” was to add a boolean attribute &lt;em&gt;pinned&lt;/em&gt; to markdown file metadata and let graphQL do its magic.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;md&quot;&gt;&lt;pre class=&quot;language-md&quot;&gt;&lt;code class=&quot;language-md&quot;&gt; &lt;span class=&quot;token hr punctuation&quot;&gt;---&lt;/span&gt;
+ title: The title of a post
+ (...)
+ pinned: true
+ (..)
+ description: The description of a post
+ &lt;span class=&quot;token hr punctuation&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The query follows next:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;graphql&quot;&gt;&lt;pre class=&quot;language-graphql&quot;&gt;&lt;code class=&quot;language-graphql&quot;&gt;&lt;span class=&quot;token attr-name&quot;&gt;allPinnedPosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; allMarkdownRemark&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token attr-name&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;
+      &lt;span class=&quot;token attr-name&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;frontmatter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;post&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;draft&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;ne&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;pinned&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token attr-name&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;frontmatter___date&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      edges &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        node &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          fields &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            slug
+            categorySlug
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          frontmatter &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            title
+            date
+            category
+            description
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As you can see, I implemented the retrieval logic to get “the latest 5 posts which are not a draft and are pinned”.
+With the query retrieving the results, I created a simple component to list those posts and got it rendered at the sidebar. &lt;/p&gt;
+&lt;p&gt;Exactly want I wanted: low implementation time to focus on writing content. You can see the result inside the sidebar on the main page. &lt;/p&gt;
+&lt;p&gt;This was my first post. Now I just need to keep writing and hopefully make my contributions a habit.
+I hope you enjoyed reading the same way I enjoyed writing.&lt;/p&gt;</content:encoded></item></channel></rss>
