@@ -3,18 +3,20 @@
 <url> <loc>https://jramada.github.io/the-reasonable-investor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/categories</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jramada.github.io/posts/a-nova-epidemia-das-subscricoes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jramada.github.io/posts/minimalismo-nos-investimentos</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jramada.github.io/posts/Fundo-de-emergencia-para-que-te-quero</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jramada.github.io/posts/habitos-salvacao-ou-ruina</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/posts/the-journey-to-build-my-website</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jramada.github.io/pages/the-reasonable-subscriber/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/pages/terms-and-conditions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://jramada.github.io/pages/the-reasonable-subscriber/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://jramada.github.io/posts/minimalismo-nos-investimentos</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://jramada.github.io/posts/a-nova-epidemia-das-subscricoes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://jramada.github.io/posts/Fundo-de-emergencia-para-que-te-quero</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/engineering</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/financas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/financas-pessoais</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/fundo-de-emergencia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jramada.github.io/tag/habitos</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/investimento</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/mentalidade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/tag/minimalismo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -25,4 +27,5 @@
 <url> <loc>https://jramada.github.io/category/finance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/category/investment</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://jramada.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://jramada.github.io/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
